@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package janus;
+
+service Janusd {
+  rpc CreateWatch(JanusdConfig) returns (JanusdHandle) {}
+  rpc DestroyWatch(JanusdConfig) returns (Empty) {}
+  rpc GetWatchState(Empty) returns (stream JanusdHandle) {}
+}
+
+message JanusdConfig {
+  string name = 1;
+  string nodeName = 2;
+  string podName = 3;
+  repeated int32 pid = 4;
+  repeated string cid = 5;
+  repeated JanusWatcherSubject subject = 6;
+}
+
+message JanusWatcherSubject {
+  repeated string allow = 1;
+  repeated string deny = 2;
+  repeated string event = 3;
+}
+
+message JanusdHandle {
+  string nodeName = 1;
+  string podName = 2;
+  repeated int32 pid = 3;
+  repeated int32 processEventfd = 4;
+  int32 mqFd = 5;
+}
+
+message Empty {}
