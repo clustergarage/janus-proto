@@ -20,7 +20,7 @@
 // @@protoc_insertion_point(includes)
 
 namespace protobuf_janus_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_janus_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_JanusWatcherSubject;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_janus_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_JanusGuardSubject;
 }  // namespace protobuf_janus_2eproto
 namespace janus {
 class JanusdConfigDefaultTypeInternal {
@@ -28,11 +28,11 @@ class JanusdConfigDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<JanusdConfig>
       _instance;
 } _JanusdConfig_default_instance_;
-class JanusWatcherSubjectDefaultTypeInternal {
+class JanusGuardSubjectDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<JanusWatcherSubject>
+  ::google::protobuf::internal::ExplicitlyConstructed<JanusGuardSubject>
       _instance;
-} _JanusWatcherSubject_default_instance_;
+} _JanusGuardSubject_default_instance_;
 class JanusdHandleDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<JanusdHandle>
@@ -58,21 +58,21 @@ static void InitDefaultsJanusdConfig() {
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_JanusdConfig =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsJanusdConfig}, {
-      &protobuf_janus_2eproto::scc_info_JanusWatcherSubject.base,}};
+      &protobuf_janus_2eproto::scc_info_JanusGuardSubject.base,}};
 
-static void InitDefaultsJanusWatcherSubject() {
+static void InitDefaultsJanusGuardSubject() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::janus::_JanusWatcherSubject_default_instance_;
-    new (ptr) ::janus::JanusWatcherSubject();
+    void* ptr = &::janus::_JanusGuardSubject_default_instance_;
+    new (ptr) ::janus::JanusGuardSubject();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::janus::JanusWatcherSubject::InitAsDefaultInstance();
+  ::janus::JanusGuardSubject::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_JanusWatcherSubject =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsJanusWatcherSubject}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_JanusGuardSubject =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsJanusGuardSubject}, {}};
 
 static void InitDefaultsJanusdHandle() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -104,7 +104,7 @@ static void InitDefaultsEmpty() {
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_JanusdConfig.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_JanusWatcherSubject.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_JanusGuardSubject.base);
   ::google::protobuf::internal::InitSCC(&scc_info_JanusdHandle.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Empty.base);
 }
@@ -124,13 +124,13 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusdConfig, cid_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusdConfig, subject_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusWatcherSubject, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusGuardSubject, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusWatcherSubject, allow_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusWatcherSubject, deny_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusWatcherSubject, event_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusGuardSubject, allow_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusGuardSubject, deny_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusGuardSubject, event_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusdHandle, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -149,14 +149,14 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::janus::JanusdConfig)},
-  { 11, -1, sizeof(::janus::JanusWatcherSubject)},
+  { 11, -1, sizeof(::janus::JanusGuardSubject)},
   { 19, -1, sizeof(::janus::JanusdHandle)},
   { 29, -1, sizeof(::janus::Empty)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::janus::_JanusdConfig_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::janus::_JanusWatcherSubject_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::janus::_JanusGuardSubject_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::janus::_JanusdHandle_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::janus::_Empty_default_instance_),
 };
@@ -182,23 +182,22 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\013janus.proto\022\005janus\"\206\001\n\014JanusdConfig\022\014\n"
+      "\n\013janus.proto\022\005janus\"\204\001\n\014JanusdConfig\022\014\n"
       "\004name\030\001 \001(\t\022\020\n\010nodeName\030\002 \001(\t\022\017\n\007podName"
-      "\030\003 \001(\t\022\013\n\003pid\030\004 \003(\005\022\013\n\003cid\030\005 \003(\t\022+\n\007subj"
-      "ect\030\006 \003(\0132\032.janus.JanusWatcherSubject\"A\n"
-      "\023JanusWatcherSubject\022\r\n\005allow\030\001 \003(\t\022\014\n\004d"
-      "eny\030\002 \003(\t\022\r\n\005event\030\003 \003(\t\"d\n\014JanusdHandle"
-      "\022\020\n\010nodeName\030\001 \001(\t\022\017\n\007podName\030\002 \001(\t\022\013\n\003p"
-      "id\030\003 \003(\005\022\026\n\016processEventfd\030\004 \003(\005\022\014\n\004mqFd"
-      "\030\005 \001(\005\"\007\n\005Empty2\260\001\n\006Janusd\0229\n\013CreateWatc"
-      "h\022\023.janus.JanusdConfig\032\023.janus.JanusdHan"
-      "dle\"\000\0223\n\014DestroyWatch\022\023.janus.JanusdConf"
-      "ig\032\014.janus.Empty\"\000\0226\n\rGetWatchState\022\014.ja"
-      "nus.Empty\032\023.janus.JanusdHandle\"\0000\001b\006prot"
-      "o3"
+      "\030\003 \001(\t\022\013\n\003pid\030\004 \003(\005\022\013\n\003cid\030\005 \003(\t\022)\n\007subj"
+      "ect\030\006 \003(\0132\030.janus.JanusGuardSubject\"\?\n\021J"
+      "anusGuardSubject\022\r\n\005allow\030\001 \003(\t\022\014\n\004deny\030"
+      "\002 \003(\t\022\r\n\005event\030\003 \003(\t\"d\n\014JanusdHandle\022\020\n\010"
+      "nodeName\030\001 \001(\t\022\017\n\007podName\030\002 \001(\t\022\013\n\003pid\030\003"
+      " \003(\005\022\026\n\016processEventfd\030\004 \003(\005\022\014\n\004mqFd\030\005 \001"
+      "(\005\"\007\n\005Empty2\260\001\n\006Janusd\0229\n\013CreateGuard\022\023."
+      "janus.JanusdConfig\032\023.janus.JanusdHandle\""
+      "\000\0223\n\014DestroyGuard\022\023.janus.JanusdConfig\032\014"
+      ".janus.Empty\"\000\0226\n\rGetGuardState\022\014.janus."
+      "Empty\032\023.janus.JanusdHandle\"\0000\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 522);
+      descriptor, 518);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "janus.proto", &protobuf_RegisterTypes);
 }
@@ -398,7 +397,7 @@ bool JanusdConfig::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .janus.JanusWatcherSubject subject = 6;
+      // repeated .janus.JanusGuardSubject subject = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
@@ -487,7 +486,7 @@ void JanusdConfig::SerializeWithCachedSizes(
       5, this->cid(i), output);
   }
 
-  // repeated .janus.JanusWatcherSubject subject = 6;
+  // repeated .janus.JanusGuardSubject subject = 6;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->subject_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -566,7 +565,7 @@ void JanusdConfig::SerializeWithCachedSizes(
       WriteStringToArray(5, this->cid(i), target);
   }
 
-  // repeated .janus.JanusWatcherSubject subject = 6;
+  // repeated .janus.JanusGuardSubject subject = 6;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->subject_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -615,7 +614,7 @@ size_t JanusdConfig::ByteSizeLong() const {
       this->cid(i));
   }
 
-  // repeated .janus.JanusWatcherSubject subject = 6;
+  // repeated .janus.JanusGuardSubject subject = 6;
   {
     unsigned int count = static_cast<unsigned int>(this->subject_size());
     total_size += 1UL * count;
@@ -735,58 +734,58 @@ void JanusdConfig::InternalSwap(JanusdConfig* other) {
 
 // ===================================================================
 
-void JanusWatcherSubject::InitAsDefaultInstance() {
+void JanusGuardSubject::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int JanusWatcherSubject::kAllowFieldNumber;
-const int JanusWatcherSubject::kDenyFieldNumber;
-const int JanusWatcherSubject::kEventFieldNumber;
+const int JanusGuardSubject::kAllowFieldNumber;
+const int JanusGuardSubject::kDenyFieldNumber;
+const int JanusGuardSubject::kEventFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-JanusWatcherSubject::JanusWatcherSubject()
+JanusGuardSubject::JanusGuardSubject()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   ::google::protobuf::internal::InitSCC(
-      &protobuf_janus_2eproto::scc_info_JanusWatcherSubject.base);
+      &protobuf_janus_2eproto::scc_info_JanusGuardSubject.base);
   SharedCtor();
-  // @@protoc_insertion_point(constructor:janus.JanusWatcherSubject)
+  // @@protoc_insertion_point(constructor:janus.JanusGuardSubject)
 }
-JanusWatcherSubject::JanusWatcherSubject(const JanusWatcherSubject& from)
+JanusGuardSubject::JanusGuardSubject(const JanusGuardSubject& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       allow_(from.allow_),
       deny_(from.deny_),
       event_(from.event_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:janus.JanusWatcherSubject)
+  // @@protoc_insertion_point(copy_constructor:janus.JanusGuardSubject)
 }
 
-void JanusWatcherSubject::SharedCtor() {
+void JanusGuardSubject::SharedCtor() {
 }
 
-JanusWatcherSubject::~JanusWatcherSubject() {
-  // @@protoc_insertion_point(destructor:janus.JanusWatcherSubject)
+JanusGuardSubject::~JanusGuardSubject() {
+  // @@protoc_insertion_point(destructor:janus.JanusGuardSubject)
   SharedDtor();
 }
 
-void JanusWatcherSubject::SharedDtor() {
+void JanusGuardSubject::SharedDtor() {
 }
 
-void JanusWatcherSubject::SetCachedSize(int size) const {
+void JanusGuardSubject::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* JanusWatcherSubject::descriptor() {
+const ::google::protobuf::Descriptor* JanusGuardSubject::descriptor() {
   ::protobuf_janus_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_janus_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const JanusWatcherSubject& JanusWatcherSubject::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_janus_2eproto::scc_info_JanusWatcherSubject.base);
+const JanusGuardSubject& JanusGuardSubject::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_janus_2eproto::scc_info_JanusGuardSubject.base);
   return *internal_default_instance();
 }
 
 
-void JanusWatcherSubject::Clear() {
-// @@protoc_insertion_point(message_clear_start:janus.JanusWatcherSubject)
+void JanusGuardSubject::Clear() {
+// @@protoc_insertion_point(message_clear_start:janus.JanusGuardSubject)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -797,11 +796,11 @@ void JanusWatcherSubject::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool JanusWatcherSubject::MergePartialFromCodedStream(
+bool JanusGuardSubject::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:janus.JanusWatcherSubject)
+  // @@protoc_insertion_point(parse_start:janus.JanusGuardSubject)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -817,7 +816,7 @@ bool JanusWatcherSubject::MergePartialFromCodedStream(
             this->allow(this->allow_size() - 1).data(),
             static_cast<int>(this->allow(this->allow_size() - 1).length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "janus.JanusWatcherSubject.allow"));
+            "janus.JanusGuardSubject.allow"));
         } else {
           goto handle_unusual;
         }
@@ -834,7 +833,7 @@ bool JanusWatcherSubject::MergePartialFromCodedStream(
             this->deny(this->deny_size() - 1).data(),
             static_cast<int>(this->deny(this->deny_size() - 1).length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "janus.JanusWatcherSubject.deny"));
+            "janus.JanusGuardSubject.deny"));
         } else {
           goto handle_unusual;
         }
@@ -851,7 +850,7 @@ bool JanusWatcherSubject::MergePartialFromCodedStream(
             this->event(this->event_size() - 1).data(),
             static_cast<int>(this->event(this->event_size() - 1).length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "janus.JanusWatcherSubject.event"));
+            "janus.JanusGuardSubject.event"));
         } else {
           goto handle_unusual;
         }
@@ -870,17 +869,17 @@ bool JanusWatcherSubject::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:janus.JanusWatcherSubject)
+  // @@protoc_insertion_point(parse_success:janus.JanusGuardSubject)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:janus.JanusWatcherSubject)
+  // @@protoc_insertion_point(parse_failure:janus.JanusGuardSubject)
   return false;
 #undef DO_
 }
 
-void JanusWatcherSubject::SerializeWithCachedSizes(
+void JanusGuardSubject::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:janus.JanusWatcherSubject)
+  // @@protoc_insertion_point(serialize_start:janus.JanusGuardSubject)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -889,7 +888,7 @@ void JanusWatcherSubject::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->allow(i).data(), static_cast<int>(this->allow(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "janus.JanusWatcherSubject.allow");
+      "janus.JanusGuardSubject.allow");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       1, this->allow(i), output);
   }
@@ -899,7 +898,7 @@ void JanusWatcherSubject::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->deny(i).data(), static_cast<int>(this->deny(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "janus.JanusWatcherSubject.deny");
+      "janus.JanusGuardSubject.deny");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       2, this->deny(i), output);
   }
@@ -909,7 +908,7 @@ void JanusWatcherSubject::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->event(i).data(), static_cast<int>(this->event(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "janus.JanusWatcherSubject.event");
+      "janus.JanusGuardSubject.event");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       3, this->event(i), output);
   }
@@ -918,13 +917,13 @@ void JanusWatcherSubject::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
   }
-  // @@protoc_insertion_point(serialize_end:janus.JanusWatcherSubject)
+  // @@protoc_insertion_point(serialize_end:janus.JanusGuardSubject)
 }
 
-::google::protobuf::uint8* JanusWatcherSubject::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* JanusGuardSubject::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:janus.JanusWatcherSubject)
+  // @@protoc_insertion_point(serialize_to_array_start:janus.JanusGuardSubject)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -933,7 +932,7 @@ void JanusWatcherSubject::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->allow(i).data(), static_cast<int>(this->allow(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "janus.JanusWatcherSubject.allow");
+      "janus.JanusGuardSubject.allow");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(1, this->allow(i), target);
   }
@@ -943,7 +942,7 @@ void JanusWatcherSubject::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->deny(i).data(), static_cast<int>(this->deny(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "janus.JanusWatcherSubject.deny");
+      "janus.JanusGuardSubject.deny");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(2, this->deny(i), target);
   }
@@ -953,7 +952,7 @@ void JanusWatcherSubject::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->event(i).data(), static_cast<int>(this->event(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "janus.JanusWatcherSubject.event");
+      "janus.JanusGuardSubject.event");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(3, this->event(i), target);
   }
@@ -962,12 +961,12 @@ void JanusWatcherSubject::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:janus.JanusWatcherSubject)
+  // @@protoc_insertion_point(serialize_to_array_end:janus.JanusGuardSubject)
   return target;
 }
 
-size_t JanusWatcherSubject::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:janus.JanusWatcherSubject)
+size_t JanusGuardSubject::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:janus.JanusGuardSubject)
   size_t total_size = 0;
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1004,23 +1003,23 @@ size_t JanusWatcherSubject::ByteSizeLong() const {
   return total_size;
 }
 
-void JanusWatcherSubject::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:janus.JanusWatcherSubject)
+void JanusGuardSubject::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:janus.JanusGuardSubject)
   GOOGLE_DCHECK_NE(&from, this);
-  const JanusWatcherSubject* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const JanusWatcherSubject>(
+  const JanusGuardSubject* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const JanusGuardSubject>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:janus.JanusWatcherSubject)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:janus.JanusGuardSubject)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:janus.JanusWatcherSubject)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:janus.JanusGuardSubject)
     MergeFrom(*source);
   }
 }
 
-void JanusWatcherSubject::MergeFrom(const JanusWatcherSubject& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:janus.JanusWatcherSubject)
+void JanusGuardSubject::MergeFrom(const JanusGuardSubject& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:janus.JanusGuardSubject)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -1031,29 +1030,29 @@ void JanusWatcherSubject::MergeFrom(const JanusWatcherSubject& from) {
   event_.MergeFrom(from.event_);
 }
 
-void JanusWatcherSubject::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:janus.JanusWatcherSubject)
+void JanusGuardSubject::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:janus.JanusGuardSubject)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void JanusWatcherSubject::CopyFrom(const JanusWatcherSubject& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:janus.JanusWatcherSubject)
+void JanusGuardSubject::CopyFrom(const JanusGuardSubject& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:janus.JanusGuardSubject)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool JanusWatcherSubject::IsInitialized() const {
+bool JanusGuardSubject::IsInitialized() const {
   return true;
 }
 
-void JanusWatcherSubject::Swap(JanusWatcherSubject* other) {
+void JanusGuardSubject::Swap(JanusGuardSubject* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void JanusWatcherSubject::InternalSwap(JanusWatcherSubject* other) {
+void JanusGuardSubject::InternalSwap(JanusGuardSubject* other) {
   using std::swap;
   allow_.InternalSwap(CastToBase(&other->allow_));
   deny_.InternalSwap(CastToBase(&other->deny_));
@@ -1061,7 +1060,7 @@ void JanusWatcherSubject::InternalSwap(JanusWatcherSubject* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata JanusWatcherSubject::GetMetadata() const {
+::google::protobuf::Metadata JanusGuardSubject::GetMetadata() const {
   protobuf_janus_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_janus_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -1720,8 +1719,8 @@ namespace protobuf {
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::janus::JanusdConfig* Arena::CreateMaybeMessage< ::janus::JanusdConfig >(Arena* arena) {
   return Arena::CreateInternal< ::janus::JanusdConfig >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::janus::JanusWatcherSubject* Arena::CreateMaybeMessage< ::janus::JanusWatcherSubject >(Arena* arena) {
-  return Arena::CreateInternal< ::janus::JanusWatcherSubject >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::janus::JanusGuardSubject* Arena::CreateMaybeMessage< ::janus::JanusGuardSubject >(Arena* arena) {
+  return Arena::CreateInternal< ::janus::JanusGuardSubject >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::janus::JanusdHandle* Arena::CreateMaybeMessage< ::janus::JanusdHandle >(Arena* arena) {
   return Arena::CreateInternal< ::janus::JanusdHandle >(arena);

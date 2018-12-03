@@ -26,6 +26,6 @@ protoc -I. health.proto --cpp_out=c++
 
 ```
 mockgen github.com/clustergarage/janus-proto/golang \
-  JanusdClient,Janusd_GetWatchStateClient > \
+  JanusdClient,Janusd_GetGuardStateClient > \
   golang/mock/janus_mock.pb.go
 ```

@@ -3,9 +3,9 @@ syntax = "proto3";
 package janus;
 
 service Janusd {
-  rpc CreateWatch(JanusdConfig) returns (JanusdHandle) {}
-  rpc DestroyWatch(JanusdConfig) returns (Empty) {}
-  rpc GetWatchState(Empty) returns (stream JanusdHandle) {}
+  rpc CreateGuard(JanusdConfig) returns (JanusdHandle) {}
+  rpc DestroyGuard(JanusdConfig) returns (Empty) {}
+  rpc GetGuardState(Empty) returns (stream JanusdHandle) {}
 }
 
 message JanusdConfig {
@@ -14,10 +14,10 @@ message JanusdConfig {
   string podName = 3;
   repeated int32 pid = 4;
   repeated string cid = 5;
-  repeated JanusWatcherSubject subject = 6;
+  repeated JanusGuardSubject subject = 6;
 }
 
-message JanusWatcherSubject {
+message JanusGuardSubject {
   repeated string allow = 1;
   repeated string deny = 2;
   repeated string event = 3;

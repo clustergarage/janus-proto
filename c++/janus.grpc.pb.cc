@@ -16,9 +16,9 @@
 namespace janus {
 
 static const char* Janusd_method_names[] = {
-  "/janus.Janusd/CreateWatch",
-  "/janus.Janusd/DestroyWatch",
-  "/janus.Janusd/GetWatchState",
+  "/janus.Janusd/CreateGuard",
+  "/janus.Janusd/DestroyGuard",
+  "/janus.Janusd/GetGuardState",
 };
 
 std::unique_ptr< Janusd::Stub> Janusd::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -28,45 +28,45 @@ std::unique_ptr< Janusd::Stub> Janusd::NewStub(const std::shared_ptr< ::grpc::Ch
 }
 
 Janusd::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_CreateWatch_(Janusd_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DestroyWatch_(Janusd_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetWatchState_(Janusd_method_names[2], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  : channel_(channel), rpcmethod_CreateGuard_(Janusd_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DestroyGuard_(Janusd_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetGuardState_(Janusd_method_names[2], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
-::grpc::Status Janusd::Stub::CreateWatch(::grpc::ClientContext* context, const ::janus::JanusdConfig& request, ::janus::JanusdHandle* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateWatch_, context, request, response);
+::grpc::Status Janusd::Stub::CreateGuard(::grpc::ClientContext* context, const ::janus::JanusdConfig& request, ::janus::JanusdHandle* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateGuard_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::janus::JanusdHandle>* Janusd::Stub::AsyncCreateWatchRaw(::grpc::ClientContext* context, const ::janus::JanusdConfig& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::janus::JanusdHandle>::Create(channel_.get(), cq, rpcmethod_CreateWatch_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::janus::JanusdHandle>* Janusd::Stub::AsyncCreateGuardRaw(::grpc::ClientContext* context, const ::janus::JanusdConfig& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::janus::JanusdHandle>::Create(channel_.get(), cq, rpcmethod_CreateGuard_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::janus::JanusdHandle>* Janusd::Stub::PrepareAsyncCreateWatchRaw(::grpc::ClientContext* context, const ::janus::JanusdConfig& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::janus::JanusdHandle>::Create(channel_.get(), cq, rpcmethod_CreateWatch_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::janus::JanusdHandle>* Janusd::Stub::PrepareAsyncCreateGuardRaw(::grpc::ClientContext* context, const ::janus::JanusdConfig& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::janus::JanusdHandle>::Create(channel_.get(), cq, rpcmethod_CreateGuard_, context, request, false);
 }
 
-::grpc::Status Janusd::Stub::DestroyWatch(::grpc::ClientContext* context, const ::janus::JanusdConfig& request, ::janus::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DestroyWatch_, context, request, response);
+::grpc::Status Janusd::Stub::DestroyGuard(::grpc::ClientContext* context, const ::janus::JanusdConfig& request, ::janus::Empty* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DestroyGuard_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::janus::Empty>* Janusd::Stub::AsyncDestroyWatchRaw(::grpc::ClientContext* context, const ::janus::JanusdConfig& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::janus::Empty>::Create(channel_.get(), cq, rpcmethod_DestroyWatch_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::janus::Empty>* Janusd::Stub::AsyncDestroyGuardRaw(::grpc::ClientContext* context, const ::janus::JanusdConfig& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::janus::Empty>::Create(channel_.get(), cq, rpcmethod_DestroyGuard_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::janus::Empty>* Janusd::Stub::PrepareAsyncDestroyWatchRaw(::grpc::ClientContext* context, const ::janus::JanusdConfig& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::janus::Empty>::Create(channel_.get(), cq, rpcmethod_DestroyWatch_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::janus::Empty>* Janusd::Stub::PrepareAsyncDestroyGuardRaw(::grpc::ClientContext* context, const ::janus::JanusdConfig& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::janus::Empty>::Create(channel_.get(), cq, rpcmethod_DestroyGuard_, context, request, false);
 }
 
-::grpc::ClientReader< ::janus::JanusdHandle>* Janusd::Stub::GetWatchStateRaw(::grpc::ClientContext* context, const ::janus::Empty& request) {
-  return ::grpc::internal::ClientReaderFactory< ::janus::JanusdHandle>::Create(channel_.get(), rpcmethod_GetWatchState_, context, request);
+::grpc::ClientReader< ::janus::JanusdHandle>* Janusd::Stub::GetGuardStateRaw(::grpc::ClientContext* context, const ::janus::Empty& request) {
+  return ::grpc::internal::ClientReaderFactory< ::janus::JanusdHandle>::Create(channel_.get(), rpcmethod_GetGuardState_, context, request);
 }
 
-::grpc::ClientAsyncReader< ::janus::JanusdHandle>* Janusd::Stub::AsyncGetWatchStateRaw(::grpc::ClientContext* context, const ::janus::Empty& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::janus::JanusdHandle>::Create(channel_.get(), cq, rpcmethod_GetWatchState_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::janus::JanusdHandle>* Janusd::Stub::AsyncGetGuardStateRaw(::grpc::ClientContext* context, const ::janus::Empty& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::janus::JanusdHandle>::Create(channel_.get(), cq, rpcmethod_GetGuardState_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::janus::JanusdHandle>* Janusd::Stub::PrepareAsyncGetWatchStateRaw(::grpc::ClientContext* context, const ::janus::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::janus::JanusdHandle>::Create(channel_.get(), cq, rpcmethod_GetWatchState_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::janus::JanusdHandle>* Janusd::Stub::PrepareAsyncGetGuardStateRaw(::grpc::ClientContext* context, const ::janus::Empty& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::janus::JanusdHandle>::Create(channel_.get(), cq, rpcmethod_GetGuardState_, context, request, false, nullptr);
 }
 
 Janusd::Service::Service() {
@@ -74,37 +74,37 @@ Janusd::Service::Service() {
       Janusd_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Janusd::Service, ::janus::JanusdConfig, ::janus::JanusdHandle>(
-          std::mem_fn(&Janusd::Service::CreateWatch), this)));
+          std::mem_fn(&Janusd::Service::CreateGuard), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Janusd_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Janusd::Service, ::janus::JanusdConfig, ::janus::Empty>(
-          std::mem_fn(&Janusd::Service::DestroyWatch), this)));
+          std::mem_fn(&Janusd::Service::DestroyGuard), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Janusd_method_names[2],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< Janusd::Service, ::janus::Empty, ::janus::JanusdHandle>(
-          std::mem_fn(&Janusd::Service::GetWatchState), this)));
+          std::mem_fn(&Janusd::Service::GetGuardState), this)));
 }
 
 Janusd::Service::~Service() {
 }
 
-::grpc::Status Janusd::Service::CreateWatch(::grpc::ServerContext* context, const ::janus::JanusdConfig* request, ::janus::JanusdHandle* response) {
+::grpc::Status Janusd::Service::CreateGuard(::grpc::ServerContext* context, const ::janus::JanusdConfig* request, ::janus::JanusdHandle* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status Janusd::Service::DestroyWatch(::grpc::ServerContext* context, const ::janus::JanusdConfig* request, ::janus::Empty* response) {
+::grpc::Status Janusd::Service::DestroyGuard(::grpc::ServerContext* context, const ::janus::JanusdConfig* request, ::janus::Empty* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status Janusd::Service::GetWatchState(::grpc::ServerContext* context, const ::janus::Empty* request, ::grpc::ServerWriter< ::janus::JanusdHandle>* writer) {
+::grpc::Status Janusd::Service::GetGuardState(::grpc::ServerContext* context, const ::janus::Empty* request, ::grpc::ServerWriter< ::janus::JanusdHandle>* writer) {
   (void) context;
   (void) request;
   (void) writer;

@@ -49,9 +49,9 @@ namespace janus {
 class Empty;
 class EmptyDefaultTypeInternal;
 extern EmptyDefaultTypeInternal _Empty_default_instance_;
-class JanusWatcherSubject;
-class JanusWatcherSubjectDefaultTypeInternal;
-extern JanusWatcherSubjectDefaultTypeInternal _JanusWatcherSubject_default_instance_;
+class JanusGuardSubject;
+class JanusGuardSubjectDefaultTypeInternal;
+extern JanusGuardSubjectDefaultTypeInternal _JanusGuardSubject_default_instance_;
 class JanusdConfig;
 class JanusdConfigDefaultTypeInternal;
 extern JanusdConfigDefaultTypeInternal _JanusdConfig_default_instance_;
@@ -62,7 +62,7 @@ extern JanusdHandleDefaultTypeInternal _JanusdHandle_default_instance_;
 namespace google {
 namespace protobuf {
 template<> ::janus::Empty* Arena::CreateMaybeMessage<::janus::Empty>(Arena*);
-template<> ::janus::JanusWatcherSubject* Arena::CreateMaybeMessage<::janus::JanusWatcherSubject>(Arena*);
+template<> ::janus::JanusGuardSubject* Arena::CreateMaybeMessage<::janus::JanusGuardSubject>(Arena*);
 template<> ::janus::JanusdConfig* Arena::CreateMaybeMessage<::janus::JanusdConfig>(Arena*);
 template<> ::janus::JanusdHandle* Arena::CreateMaybeMessage<::janus::JanusdHandle>(Arena*);
 }  // namespace protobuf
@@ -192,16 +192,16 @@ class JanusdConfig : public ::google::protobuf::Message /* @@protoc_insertion_po
   const ::google::protobuf::RepeatedPtrField< ::std::string>& cid() const;
   ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_cid();
 
-  // repeated .janus.JanusWatcherSubject subject = 6;
+  // repeated .janus.JanusGuardSubject subject = 6;
   int subject_size() const;
   void clear_subject();
   static const int kSubjectFieldNumber = 6;
-  ::janus::JanusWatcherSubject* mutable_subject(int index);
-  ::google::protobuf::RepeatedPtrField< ::janus::JanusWatcherSubject >*
+  ::janus::JanusGuardSubject* mutable_subject(int index);
+  ::google::protobuf::RepeatedPtrField< ::janus::JanusGuardSubject >*
       mutable_subject();
-  const ::janus::JanusWatcherSubject& subject(int index) const;
-  ::janus::JanusWatcherSubject* add_subject();
-  const ::google::protobuf::RepeatedPtrField< ::janus::JanusWatcherSubject >&
+  const ::janus::JanusGuardSubject& subject(int index) const;
+  ::janus::JanusGuardSubject* add_subject();
+  const ::google::protobuf::RepeatedPtrField< ::janus::JanusGuardSubject >&
       subject() const;
 
   // string name = 1;
@@ -253,7 +253,7 @@ class JanusdConfig : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > pid_;
   mutable int _pid_cached_byte_size_;
   ::google::protobuf::RepeatedPtrField< ::std::string> cid_;
-  ::google::protobuf::RepeatedPtrField< ::janus::JanusWatcherSubject > subject_;
+  ::google::protobuf::RepeatedPtrField< ::janus::JanusGuardSubject > subject_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr nodename_;
   ::google::protobuf::internal::ArenaStringPtr podname_;
@@ -262,24 +262,24 @@ class JanusdConfig : public ::google::protobuf::Message /* @@protoc_insertion_po
 };
 // -------------------------------------------------------------------
 
-class JanusWatcherSubject : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:janus.JanusWatcherSubject) */ {
+class JanusGuardSubject : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:janus.JanusGuardSubject) */ {
  public:
-  JanusWatcherSubject();
-  virtual ~JanusWatcherSubject();
+  JanusGuardSubject();
+  virtual ~JanusGuardSubject();
 
-  JanusWatcherSubject(const JanusWatcherSubject& from);
+  JanusGuardSubject(const JanusGuardSubject& from);
 
-  inline JanusWatcherSubject& operator=(const JanusWatcherSubject& from) {
+  inline JanusGuardSubject& operator=(const JanusGuardSubject& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  JanusWatcherSubject(JanusWatcherSubject&& from) noexcept
-    : JanusWatcherSubject() {
+  JanusGuardSubject(JanusGuardSubject&& from) noexcept
+    : JanusGuardSubject() {
     *this = ::std::move(from);
   }
 
-  inline JanusWatcherSubject& operator=(JanusWatcherSubject&& from) noexcept {
+  inline JanusGuardSubject& operator=(JanusGuardSubject&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -289,34 +289,34 @@ class JanusWatcherSubject : public ::google::protobuf::Message /* @@protoc_inser
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const JanusWatcherSubject& default_instance();
+  static const JanusGuardSubject& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const JanusWatcherSubject* internal_default_instance() {
-    return reinterpret_cast<const JanusWatcherSubject*>(
-               &_JanusWatcherSubject_default_instance_);
+  static inline const JanusGuardSubject* internal_default_instance() {
+    return reinterpret_cast<const JanusGuardSubject*>(
+               &_JanusGuardSubject_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  void Swap(JanusWatcherSubject* other);
-  friend void swap(JanusWatcherSubject& a, JanusWatcherSubject& b) {
+  void Swap(JanusGuardSubject* other);
+  friend void swap(JanusGuardSubject& a, JanusGuardSubject& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline JanusWatcherSubject* New() const final {
-    return CreateMaybeMessage<JanusWatcherSubject>(NULL);
+  inline JanusGuardSubject* New() const final {
+    return CreateMaybeMessage<JanusGuardSubject>(NULL);
   }
 
-  JanusWatcherSubject* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<JanusWatcherSubject>(arena);
+  JanusGuardSubject* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<JanusGuardSubject>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const JanusWatcherSubject& from);
-  void MergeFrom(const JanusWatcherSubject& from);
+  void CopyFrom(const JanusGuardSubject& from);
+  void MergeFrom(const JanusGuardSubject& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -333,7 +333,7 @@ class JanusWatcherSubject : public ::google::protobuf::Message /* @@protoc_inser
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(JanusWatcherSubject* other);
+  void InternalSwap(JanusGuardSubject* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -415,7 +415,7 @@ class JanusWatcherSubject : public ::google::protobuf::Message /* @@protoc_inser
   const ::google::protobuf::RepeatedPtrField< ::std::string>& event() const;
   ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_event();
 
-  // @@protoc_insertion_point(class_scope:janus.JanusWatcherSubject)
+  // @@protoc_insertion_point(class_scope:janus.JanusGuardSubject)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -951,31 +951,31 @@ JanusdConfig::mutable_cid() {
   return &cid_;
 }
 
-// repeated .janus.JanusWatcherSubject subject = 6;
+// repeated .janus.JanusGuardSubject subject = 6;
 inline int JanusdConfig::subject_size() const {
   return subject_.size();
 }
 inline void JanusdConfig::clear_subject() {
   subject_.Clear();
 }
-inline ::janus::JanusWatcherSubject* JanusdConfig::mutable_subject(int index) {
+inline ::janus::JanusGuardSubject* JanusdConfig::mutable_subject(int index) {
   // @@protoc_insertion_point(field_mutable:janus.JanusdConfig.subject)
   return subject_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::janus::JanusWatcherSubject >*
+inline ::google::protobuf::RepeatedPtrField< ::janus::JanusGuardSubject >*
 JanusdConfig::mutable_subject() {
   // @@protoc_insertion_point(field_mutable_list:janus.JanusdConfig.subject)
   return &subject_;
 }
-inline const ::janus::JanusWatcherSubject& JanusdConfig::subject(int index) const {
+inline const ::janus::JanusGuardSubject& JanusdConfig::subject(int index) const {
   // @@protoc_insertion_point(field_get:janus.JanusdConfig.subject)
   return subject_.Get(index);
 }
-inline ::janus::JanusWatcherSubject* JanusdConfig::add_subject() {
+inline ::janus::JanusGuardSubject* JanusdConfig::add_subject() {
   // @@protoc_insertion_point(field_add:janus.JanusdConfig.subject)
   return subject_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::janus::JanusWatcherSubject >&
+inline const ::google::protobuf::RepeatedPtrField< ::janus::JanusGuardSubject >&
 JanusdConfig::subject() const {
   // @@protoc_insertion_point(field_list:janus.JanusdConfig.subject)
   return subject_;
@@ -983,212 +983,212 @@ JanusdConfig::subject() const {
 
 // -------------------------------------------------------------------
 
-// JanusWatcherSubject
+// JanusGuardSubject
 
 // repeated string allow = 1;
-inline int JanusWatcherSubject::allow_size() const {
+inline int JanusGuardSubject::allow_size() const {
   return allow_.size();
 }
-inline void JanusWatcherSubject::clear_allow() {
+inline void JanusGuardSubject::clear_allow() {
   allow_.Clear();
 }
-inline const ::std::string& JanusWatcherSubject::allow(int index) const {
-  // @@protoc_insertion_point(field_get:janus.JanusWatcherSubject.allow)
+inline const ::std::string& JanusGuardSubject::allow(int index) const {
+  // @@protoc_insertion_point(field_get:janus.JanusGuardSubject.allow)
   return allow_.Get(index);
 }
-inline ::std::string* JanusWatcherSubject::mutable_allow(int index) {
-  // @@protoc_insertion_point(field_mutable:janus.JanusWatcherSubject.allow)
+inline ::std::string* JanusGuardSubject::mutable_allow(int index) {
+  // @@protoc_insertion_point(field_mutable:janus.JanusGuardSubject.allow)
   return allow_.Mutable(index);
 }
-inline void JanusWatcherSubject::set_allow(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:janus.JanusWatcherSubject.allow)
+inline void JanusGuardSubject::set_allow(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:janus.JanusGuardSubject.allow)
   allow_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
-inline void JanusWatcherSubject::set_allow(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:janus.JanusWatcherSubject.allow)
+inline void JanusGuardSubject::set_allow(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:janus.JanusGuardSubject.allow)
   allow_.Mutable(index)->assign(std::move(value));
 }
 #endif
-inline void JanusWatcherSubject::set_allow(int index, const char* value) {
+inline void JanusGuardSubject::set_allow(int index, const char* value) {
   GOOGLE_DCHECK(value != NULL);
   allow_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:janus.JanusWatcherSubject.allow)
+  // @@protoc_insertion_point(field_set_char:janus.JanusGuardSubject.allow)
 }
-inline void JanusWatcherSubject::set_allow(int index, const char* value, size_t size) {
+inline void JanusGuardSubject::set_allow(int index, const char* value, size_t size) {
   allow_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:janus.JanusWatcherSubject.allow)
+  // @@protoc_insertion_point(field_set_pointer:janus.JanusGuardSubject.allow)
 }
-inline ::std::string* JanusWatcherSubject::add_allow() {
-  // @@protoc_insertion_point(field_add_mutable:janus.JanusWatcherSubject.allow)
+inline ::std::string* JanusGuardSubject::add_allow() {
+  // @@protoc_insertion_point(field_add_mutable:janus.JanusGuardSubject.allow)
   return allow_.Add();
 }
-inline void JanusWatcherSubject::add_allow(const ::std::string& value) {
+inline void JanusGuardSubject::add_allow(const ::std::string& value) {
   allow_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:janus.JanusWatcherSubject.allow)
+  // @@protoc_insertion_point(field_add:janus.JanusGuardSubject.allow)
 }
 #if LANG_CXX11
-inline void JanusWatcherSubject::add_allow(::std::string&& value) {
+inline void JanusGuardSubject::add_allow(::std::string&& value) {
   allow_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:janus.JanusWatcherSubject.allow)
+  // @@protoc_insertion_point(field_add:janus.JanusGuardSubject.allow)
 }
 #endif
-inline void JanusWatcherSubject::add_allow(const char* value) {
+inline void JanusGuardSubject::add_allow(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   allow_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:janus.JanusWatcherSubject.allow)
+  // @@protoc_insertion_point(field_add_char:janus.JanusGuardSubject.allow)
 }
-inline void JanusWatcherSubject::add_allow(const char* value, size_t size) {
+inline void JanusGuardSubject::add_allow(const char* value, size_t size) {
   allow_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:janus.JanusWatcherSubject.allow)
+  // @@protoc_insertion_point(field_add_pointer:janus.JanusGuardSubject.allow)
 }
 inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-JanusWatcherSubject::allow() const {
-  // @@protoc_insertion_point(field_list:janus.JanusWatcherSubject.allow)
+JanusGuardSubject::allow() const {
+  // @@protoc_insertion_point(field_list:janus.JanusGuardSubject.allow)
   return allow_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-JanusWatcherSubject::mutable_allow() {
-  // @@protoc_insertion_point(field_mutable_list:janus.JanusWatcherSubject.allow)
+JanusGuardSubject::mutable_allow() {
+  // @@protoc_insertion_point(field_mutable_list:janus.JanusGuardSubject.allow)
   return &allow_;
 }
 
 // repeated string deny = 2;
-inline int JanusWatcherSubject::deny_size() const {
+inline int JanusGuardSubject::deny_size() const {
   return deny_.size();
 }
-inline void JanusWatcherSubject::clear_deny() {
+inline void JanusGuardSubject::clear_deny() {
   deny_.Clear();
 }
-inline const ::std::string& JanusWatcherSubject::deny(int index) const {
-  // @@protoc_insertion_point(field_get:janus.JanusWatcherSubject.deny)
+inline const ::std::string& JanusGuardSubject::deny(int index) const {
+  // @@protoc_insertion_point(field_get:janus.JanusGuardSubject.deny)
   return deny_.Get(index);
 }
-inline ::std::string* JanusWatcherSubject::mutable_deny(int index) {
-  // @@protoc_insertion_point(field_mutable:janus.JanusWatcherSubject.deny)
+inline ::std::string* JanusGuardSubject::mutable_deny(int index) {
+  // @@protoc_insertion_point(field_mutable:janus.JanusGuardSubject.deny)
   return deny_.Mutable(index);
 }
-inline void JanusWatcherSubject::set_deny(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:janus.JanusWatcherSubject.deny)
+inline void JanusGuardSubject::set_deny(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:janus.JanusGuardSubject.deny)
   deny_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
-inline void JanusWatcherSubject::set_deny(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:janus.JanusWatcherSubject.deny)
+inline void JanusGuardSubject::set_deny(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:janus.JanusGuardSubject.deny)
   deny_.Mutable(index)->assign(std::move(value));
 }
 #endif
-inline void JanusWatcherSubject::set_deny(int index, const char* value) {
+inline void JanusGuardSubject::set_deny(int index, const char* value) {
   GOOGLE_DCHECK(value != NULL);
   deny_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:janus.JanusWatcherSubject.deny)
+  // @@protoc_insertion_point(field_set_char:janus.JanusGuardSubject.deny)
 }
-inline void JanusWatcherSubject::set_deny(int index, const char* value, size_t size) {
+inline void JanusGuardSubject::set_deny(int index, const char* value, size_t size) {
   deny_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:janus.JanusWatcherSubject.deny)
+  // @@protoc_insertion_point(field_set_pointer:janus.JanusGuardSubject.deny)
 }
-inline ::std::string* JanusWatcherSubject::add_deny() {
-  // @@protoc_insertion_point(field_add_mutable:janus.JanusWatcherSubject.deny)
+inline ::std::string* JanusGuardSubject::add_deny() {
+  // @@protoc_insertion_point(field_add_mutable:janus.JanusGuardSubject.deny)
   return deny_.Add();
 }
-inline void JanusWatcherSubject::add_deny(const ::std::string& value) {
+inline void JanusGuardSubject::add_deny(const ::std::string& value) {
   deny_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:janus.JanusWatcherSubject.deny)
+  // @@protoc_insertion_point(field_add:janus.JanusGuardSubject.deny)
 }
 #if LANG_CXX11
-inline void JanusWatcherSubject::add_deny(::std::string&& value) {
+inline void JanusGuardSubject::add_deny(::std::string&& value) {
   deny_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:janus.JanusWatcherSubject.deny)
+  // @@protoc_insertion_point(field_add:janus.JanusGuardSubject.deny)
 }
 #endif
-inline void JanusWatcherSubject::add_deny(const char* value) {
+inline void JanusGuardSubject::add_deny(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   deny_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:janus.JanusWatcherSubject.deny)
+  // @@protoc_insertion_point(field_add_char:janus.JanusGuardSubject.deny)
 }
-inline void JanusWatcherSubject::add_deny(const char* value, size_t size) {
+inline void JanusGuardSubject::add_deny(const char* value, size_t size) {
   deny_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:janus.JanusWatcherSubject.deny)
+  // @@protoc_insertion_point(field_add_pointer:janus.JanusGuardSubject.deny)
 }
 inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-JanusWatcherSubject::deny() const {
-  // @@protoc_insertion_point(field_list:janus.JanusWatcherSubject.deny)
+JanusGuardSubject::deny() const {
+  // @@protoc_insertion_point(field_list:janus.JanusGuardSubject.deny)
   return deny_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-JanusWatcherSubject::mutable_deny() {
-  // @@protoc_insertion_point(field_mutable_list:janus.JanusWatcherSubject.deny)
+JanusGuardSubject::mutable_deny() {
+  // @@protoc_insertion_point(field_mutable_list:janus.JanusGuardSubject.deny)
   return &deny_;
 }
 
 // repeated string event = 3;
-inline int JanusWatcherSubject::event_size() const {
+inline int JanusGuardSubject::event_size() const {
   return event_.size();
 }
-inline void JanusWatcherSubject::clear_event() {
+inline void JanusGuardSubject::clear_event() {
   event_.Clear();
 }
-inline const ::std::string& JanusWatcherSubject::event(int index) const {
-  // @@protoc_insertion_point(field_get:janus.JanusWatcherSubject.event)
+inline const ::std::string& JanusGuardSubject::event(int index) const {
+  // @@protoc_insertion_point(field_get:janus.JanusGuardSubject.event)
   return event_.Get(index);
 }
-inline ::std::string* JanusWatcherSubject::mutable_event(int index) {
-  // @@protoc_insertion_point(field_mutable:janus.JanusWatcherSubject.event)
+inline ::std::string* JanusGuardSubject::mutable_event(int index) {
+  // @@protoc_insertion_point(field_mutable:janus.JanusGuardSubject.event)
   return event_.Mutable(index);
 }
-inline void JanusWatcherSubject::set_event(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:janus.JanusWatcherSubject.event)
+inline void JanusGuardSubject::set_event(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:janus.JanusGuardSubject.event)
   event_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
-inline void JanusWatcherSubject::set_event(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:janus.JanusWatcherSubject.event)
+inline void JanusGuardSubject::set_event(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:janus.JanusGuardSubject.event)
   event_.Mutable(index)->assign(std::move(value));
 }
 #endif
-inline void JanusWatcherSubject::set_event(int index, const char* value) {
+inline void JanusGuardSubject::set_event(int index, const char* value) {
   GOOGLE_DCHECK(value != NULL);
   event_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:janus.JanusWatcherSubject.event)
+  // @@protoc_insertion_point(field_set_char:janus.JanusGuardSubject.event)
 }
-inline void JanusWatcherSubject::set_event(int index, const char* value, size_t size) {
+inline void JanusGuardSubject::set_event(int index, const char* value, size_t size) {
   event_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:janus.JanusWatcherSubject.event)
+  // @@protoc_insertion_point(field_set_pointer:janus.JanusGuardSubject.event)
 }
-inline ::std::string* JanusWatcherSubject::add_event() {
-  // @@protoc_insertion_point(field_add_mutable:janus.JanusWatcherSubject.event)
+inline ::std::string* JanusGuardSubject::add_event() {
+  // @@protoc_insertion_point(field_add_mutable:janus.JanusGuardSubject.event)
   return event_.Add();
 }
-inline void JanusWatcherSubject::add_event(const ::std::string& value) {
+inline void JanusGuardSubject::add_event(const ::std::string& value) {
   event_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:janus.JanusWatcherSubject.event)
+  // @@protoc_insertion_point(field_add:janus.JanusGuardSubject.event)
 }
 #if LANG_CXX11
-inline void JanusWatcherSubject::add_event(::std::string&& value) {
+inline void JanusGuardSubject::add_event(::std::string&& value) {
   event_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:janus.JanusWatcherSubject.event)
+  // @@protoc_insertion_point(field_add:janus.JanusGuardSubject.event)
 }
 #endif
-inline void JanusWatcherSubject::add_event(const char* value) {
+inline void JanusGuardSubject::add_event(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   event_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:janus.JanusWatcherSubject.event)
+  // @@protoc_insertion_point(field_add_char:janus.JanusGuardSubject.event)
 }
-inline void JanusWatcherSubject::add_event(const char* value, size_t size) {
+inline void JanusGuardSubject::add_event(const char* value, size_t size) {
   event_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:janus.JanusWatcherSubject.event)
+  // @@protoc_insertion_point(field_add_pointer:janus.JanusGuardSubject.event)
 }
 inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-JanusWatcherSubject::event() const {
-  // @@protoc_insertion_point(field_list:janus.JanusWatcherSubject.event)
+JanusGuardSubject::event() const {
+  // @@protoc_insertion_point(field_list:janus.JanusGuardSubject.event)
   return event_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-JanusWatcherSubject::mutable_event() {
-  // @@protoc_insertion_point(field_mutable_list:janus.JanusWatcherSubject.event)
+JanusGuardSubject::mutable_event() {
+  // @@protoc_insertion_point(field_mutable_list:janus.JanusGuardSubject.event)
   return &event_;
 }
 
