@@ -29,6 +29,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_janus_2eproto 
@@ -38,7 +41,7 @@ namespace protobuf_janus_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[4];
+  static const ::google::protobuf::internal::ParseTable schema[5];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -52,6 +55,9 @@ extern EmptyDefaultTypeInternal _Empty_default_instance_;
 class JanusGuardSubject;
 class JanusGuardSubjectDefaultTypeInternal;
 extern JanusGuardSubjectDefaultTypeInternal _JanusGuardSubject_default_instance_;
+class JanusGuardSubject_TagsEntry_DoNotUse;
+class JanusGuardSubject_TagsEntry_DoNotUseDefaultTypeInternal;
+extern JanusGuardSubject_TagsEntry_DoNotUseDefaultTypeInternal _JanusGuardSubject_TagsEntry_DoNotUse_default_instance_;
 class JanusdConfig;
 class JanusdConfigDefaultTypeInternal;
 extern JanusdConfigDefaultTypeInternal _JanusdConfig_default_instance_;
@@ -63,6 +69,7 @@ namespace google {
 namespace protobuf {
 template<> ::janus::Empty* Arena::CreateMaybeMessage<::janus::Empty>(Arena*);
 template<> ::janus::JanusGuardSubject* Arena::CreateMaybeMessage<::janus::JanusGuardSubject>(Arena*);
+template<> ::janus::JanusGuardSubject_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::janus::JanusGuardSubject_TagsEntry_DoNotUse>(Arena*);
 template<> ::janus::JanusdConfig* Arena::CreateMaybeMessage<::janus::JanusdConfig>(Arena*);
 template<> ::janus::JanusdHandle* Arena::CreateMaybeMessage<::janus::JanusdHandle>(Arena*);
 }  // namespace protobuf
@@ -246,6 +253,20 @@ class JanusdConfig : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::std::string* release_podname();
   void set_allocated_podname(::std::string* podname);
 
+  // string logFormat = 7;
+  void clear_logformat();
+  static const int kLogFormatFieldNumber = 7;
+  const ::std::string& logformat() const;
+  void set_logformat(const ::std::string& value);
+  #if LANG_CXX11
+  void set_logformat(::std::string&& value);
+  #endif
+  void set_logformat(const char* value);
+  void set_logformat(const char* value, size_t size);
+  ::std::string* mutable_logformat();
+  ::std::string* release_logformat();
+  void set_allocated_logformat(::std::string* logformat);
+
   // @@protoc_insertion_point(class_scope:janus.JanusdConfig)
  private:
 
@@ -257,9 +278,31 @@ class JanusdConfig : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr nodename_;
   ::google::protobuf::internal::ArenaStringPtr podname_;
+  ::google::protobuf::internal::ArenaStringPtr logformat_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_janus_2eproto::TableStruct;
 };
+// -------------------------------------------------------------------
+
+class JanusGuardSubject_TagsEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<JanusGuardSubject_TagsEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<JanusGuardSubject_TagsEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  JanusGuardSubject_TagsEntry_DoNotUse();
+  JanusGuardSubject_TagsEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const JanusGuardSubject_TagsEntry_DoNotUse& other);
+  static const JanusGuardSubject_TagsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const JanusGuardSubject_TagsEntry_DoNotUse*>(&_JanusGuardSubject_TagsEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
 // -------------------------------------------------------------------
 
 class JanusGuardSubject : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:janus.JanusGuardSubject) */ {
@@ -297,7 +340,7 @@ class JanusGuardSubject : public ::google::protobuf::Message /* @@protoc_inserti
                &_JanusGuardSubject_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(JanusGuardSubject* other);
   friend void swap(JanusGuardSubject& a, JanusGuardSubject& b) {
@@ -346,6 +389,7 @@ class JanusGuardSubject : public ::google::protobuf::Message /* @@protoc_inserti
   ::google::protobuf::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
+
 
   // accessors -------------------------------------------------------
 
@@ -415,6 +459,15 @@ class JanusGuardSubject : public ::google::protobuf::Message /* @@protoc_inserti
   const ::google::protobuf::RepeatedPtrField< ::std::string>& event() const;
   ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_event();
 
+  // map<string, string> tags = 4;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 4;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      tags() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_tags();
+
   // @@protoc_insertion_point(class_scope:janus.JanusGuardSubject)
  private:
 
@@ -422,6 +475,12 @@ class JanusGuardSubject : public ::google::protobuf::Message /* @@protoc_inserti
   ::google::protobuf::RepeatedPtrField< ::std::string> allow_;
   ::google::protobuf::RepeatedPtrField< ::std::string> deny_;
   ::google::protobuf::RepeatedPtrField< ::std::string> event_;
+  ::google::protobuf::internal::MapField<
+      JanusGuardSubject_TagsEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > tags_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_janus_2eproto::TableStruct;
 };
@@ -462,7 +521,7 @@ class JanusdHandle : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_JanusdHandle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(JanusdHandle* other);
   friend void swap(JanusdHandle& a, JanusdHandle& b) {
@@ -566,12 +625,6 @@ class JanusdHandle : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::std::string* release_podname();
   void set_allocated_podname(::std::string* podname);
 
-  // int32 mqFd = 5;
-  void clear_mqfd();
-  static const int kMqFdFieldNumber = 5;
-  ::google::protobuf::int32 mqfd() const;
-  void set_mqfd(::google::protobuf::int32 value);
-
   // @@protoc_insertion_point(class_scope:janus.JanusdHandle)
  private:
 
@@ -582,7 +635,6 @@ class JanusdHandle : public ::google::protobuf::Message /* @@protoc_insertion_po
   mutable int _processeventfd_cached_byte_size_;
   ::google::protobuf::internal::ArenaStringPtr nodename_;
   ::google::protobuf::internal::ArenaStringPtr podname_;
-  ::google::protobuf::int32 mqfd_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_janus_2eproto::TableStruct;
 };
@@ -623,7 +675,7 @@ class Empty : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Empty_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(Empty* other);
   friend void swap(Empty& a, Empty& b) {
@@ -981,6 +1033,61 @@ JanusdConfig::subject() const {
   return subject_;
 }
 
+// string logFormat = 7;
+inline void JanusdConfig::clear_logformat() {
+  logformat_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JanusdConfig::logformat() const {
+  // @@protoc_insertion_point(field_get:janus.JanusdConfig.logFormat)
+  return logformat_.GetNoArena();
+}
+inline void JanusdConfig::set_logformat(const ::std::string& value) {
+  
+  logformat_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:janus.JanusdConfig.logFormat)
+}
+#if LANG_CXX11
+inline void JanusdConfig::set_logformat(::std::string&& value) {
+  
+  logformat_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:janus.JanusdConfig.logFormat)
+}
+#endif
+inline void JanusdConfig::set_logformat(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  logformat_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:janus.JanusdConfig.logFormat)
+}
+inline void JanusdConfig::set_logformat(const char* value, size_t size) {
+  
+  logformat_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:janus.JanusdConfig.logFormat)
+}
+inline ::std::string* JanusdConfig::mutable_logformat() {
+  
+  // @@protoc_insertion_point(field_mutable:janus.JanusdConfig.logFormat)
+  return logformat_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JanusdConfig::release_logformat() {
+  // @@protoc_insertion_point(field_release:janus.JanusdConfig.logFormat)
+  
+  return logformat_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JanusdConfig::set_allocated_logformat(::std::string* logformat) {
+  if (logformat != NULL) {
+    
+  } else {
+    
+  }
+  logformat_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), logformat);
+  // @@protoc_insertion_point(field_set_allocated:janus.JanusdConfig.logFormat)
+}
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // JanusGuardSubject
@@ -1192,6 +1299,24 @@ JanusGuardSubject::mutable_event() {
   return &event_;
 }
 
+// map<string, string> tags = 4;
+inline int JanusGuardSubject::tags_size() const {
+  return tags_.size();
+}
+inline void JanusGuardSubject::clear_tags() {
+  tags_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+JanusGuardSubject::tags() const {
+  // @@protoc_insertion_point(field_map:janus.JanusGuardSubject.tags)
+  return tags_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+JanusGuardSubject::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_map:janus.JanusGuardSubject.tags)
+  return tags_.MutableMap();
+}
+
 // -------------------------------------------------------------------
 
 // JanusdHandle
@@ -1362,20 +1487,6 @@ JanusdHandle::mutable_processeventfd() {
   return &processeventfd_;
 }
 
-// int32 mqFd = 5;
-inline void JanusdHandle::clear_mqfd() {
-  mqfd_ = 0;
-}
-inline ::google::protobuf::int32 JanusdHandle::mqfd() const {
-  // @@protoc_insertion_point(field_get:janus.JanusdHandle.mqFd)
-  return mqfd_;
-}
-inline void JanusdHandle::set_mqfd(::google::protobuf::int32 value) {
-  
-  mqfd_ = value;
-  // @@protoc_insertion_point(field_set:janus.JanusdHandle.mqFd)
-}
-
 // -------------------------------------------------------------------
 
 // Empty
@@ -1383,6 +1494,8 @@ inline void JanusdHandle::set_mqfd(::google::protobuf::int32 value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

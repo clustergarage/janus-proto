@@ -15,12 +15,14 @@ message JanusdConfig {
   repeated int32 pid = 4;
   repeated string cid = 5;
   repeated JanusGuardSubject subject = 6;
+  string logFormat = 7;
 }
 
 message JanusGuardSubject {
   repeated string allow = 1;
   repeated string deny = 2;
   repeated string event = 3;
+  map<string, string> tags = 4;
 }
 
 message JanusdHandle {
@@ -28,7 +30,6 @@ message JanusdHandle {
   string podName = 2;
   repeated int32 pid = 3;
   repeated int32 processEventfd = 4;
-  int32 mqFd = 5;
 }
 
 message Empty {}
