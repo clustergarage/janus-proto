@@ -459,14 +459,20 @@ class JanusGuardSubject : public ::google::protobuf::Message /* @@protoc_inserti
   const ::google::protobuf::RepeatedPtrField< ::std::string>& event() const;
   ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_event();
 
-  // map<string, string> tags = 4;
+  // map<string, string> tags = 5;
   int tags_size() const;
   void clear_tags();
-  static const int kTagsFieldNumber = 4;
+  static const int kTagsFieldNumber = 5;
   const ::google::protobuf::Map< ::std::string, ::std::string >&
       tags() const;
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_tags();
+
+  // bool onlyDir = 4;
+  void clear_onlydir();
+  static const int kOnlyDirFieldNumber = 4;
+  bool onlydir() const;
+  void set_onlydir(bool value);
 
   // @@protoc_insertion_point(class_scope:janus.JanusGuardSubject)
  private:
@@ -481,6 +487,7 @@ class JanusGuardSubject : public ::google::protobuf::Message /* @@protoc_inserti
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > tags_;
+  bool onlydir_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_janus_2eproto::TableStruct;
 };
@@ -1299,7 +1306,21 @@ JanusGuardSubject::mutable_event() {
   return &event_;
 }
 
-// map<string, string> tags = 4;
+// bool onlyDir = 4;
+inline void JanusGuardSubject::clear_onlydir() {
+  onlydir_ = false;
+}
+inline bool JanusGuardSubject::onlydir() const {
+  // @@protoc_insertion_point(field_get:janus.JanusGuardSubject.onlyDir)
+  return onlydir_;
+}
+inline void JanusGuardSubject::set_onlydir(bool value) {
+  
+  onlydir_ = value;
+  // @@protoc_insertion_point(field_set:janus.JanusGuardSubject.onlyDir)
+}
+
+// map<string, string> tags = 5;
 inline int JanusGuardSubject::tags_size() const {
   return tags_.size();
 }

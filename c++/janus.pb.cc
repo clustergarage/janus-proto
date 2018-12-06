@@ -162,6 +162,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusGuardSubject, allow_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusGuardSubject, deny_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusGuardSubject, event_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusGuardSubject, onlydir_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusGuardSubject, tags_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::janus::JanusdHandle, _internal_metadata_),
@@ -182,8 +183,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 0, -1, sizeof(::janus::JanusdConfig)},
   { 12, 19, sizeof(::janus::JanusGuardSubject_TagsEntry_DoNotUse)},
   { 21, -1, sizeof(::janus::JanusGuardSubject)},
-  { 30, -1, sizeof(::janus::JanusdHandle)},
-  { 39, -1, sizeof(::janus::Empty)},
+  { 31, -1, sizeof(::janus::JanusdHandle)},
+  { 40, -1, sizeof(::janus::Empty)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -219,21 +220,21 @@ void AddDescriptorsImpl() {
       "\004name\030\001 \001(\t\022\020\n\010nodeName\030\002 \001(\t\022\017\n\007podName"
       "\030\003 \001(\t\022\013\n\003pid\030\004 \003(\005\022\013\n\003cid\030\005 \003(\t\022)\n\007subj"
       "ect\030\006 \003(\0132\030.janus.JanusGuardSubject\022\021\n\tl"
-      "ogFormat\030\007 \001(\t\"\236\001\n\021JanusGuardSubject\022\r\n\005"
+      "ogFormat\030\007 \001(\t\"\257\001\n\021JanusGuardSubject\022\r\n\005"
       "allow\030\001 \003(\t\022\014\n\004deny\030\002 \003(\t\022\r\n\005event\030\003 \003(\t"
-      "\0220\n\004tags\030\004 \003(\0132\".janus.JanusGuardSubject"
-      ".TagsEntry\032+\n\tTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-      "value\030\002 \001(\t:\0028\001\"V\n\014JanusdHandle\022\020\n\010nodeN"
-      "ame\030\001 \001(\t\022\017\n\007podName\030\002 \001(\t\022\013\n\003pid\030\003 \003(\005\022"
-      "\026\n\016processEventfd\030\004 \003(\005\"\007\n\005Empty2\260\001\n\006Jan"
-      "usd\0229\n\013CreateGuard\022\023.janus.JanusdConfig\032"
-      "\023.janus.JanusdHandle\"\000\0223\n\014DestroyGuard\022\023"
-      ".janus.JanusdConfig\032\014.janus.Empty\"\000\0226\n\rG"
-      "etGuardState\022\014.janus.Empty\032\023.janus.Janus"
-      "dHandle\"\0000\001b\006proto3"
+      "\022\017\n\007onlyDir\030\004 \001(\010\0220\n\004tags\030\005 \003(\0132\".janus."
+      "JanusGuardSubject.TagsEntry\032+\n\tTagsEntry"
+      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"V\n\014Janu"
+      "sdHandle\022\020\n\010nodeName\030\001 \001(\t\022\017\n\007podName\030\002 "
+      "\001(\t\022\013\n\003pid\030\003 \003(\005\022\026\n\016processEventfd\030\004 \003(\005"
+      "\"\007\n\005Empty2\260\001\n\006Janusd\0229\n\013CreateGuard\022\023.ja"
+      "nus.JanusdConfig\032\023.janus.JanusdHandle\"\000\022"
+      "3\n\014DestroyGuard\022\023.janus.JanusdConfig\032\014.j"
+      "anus.Empty\"\000\0226\n\rGetGuardState\022\014.janus.Em"
+      "pty\032\023.janus.JanusdHandle\"\0000\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 619);
+      descriptor, 636);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "janus.proto", &protobuf_RegisterTypes);
 }
@@ -851,6 +852,7 @@ void JanusGuardSubject::InitAsDefaultInstance() {
 const int JanusGuardSubject::kAllowFieldNumber;
 const int JanusGuardSubject::kDenyFieldNumber;
 const int JanusGuardSubject::kEventFieldNumber;
+const int JanusGuardSubject::kOnlyDirFieldNumber;
 const int JanusGuardSubject::kTagsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -869,10 +871,12 @@ JanusGuardSubject::JanusGuardSubject(const JanusGuardSubject& from)
       event_(from.event_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   tags_.MergeFrom(from.tags_);
+  onlydir_ = from.onlydir_;
   // @@protoc_insertion_point(copy_constructor:janus.JanusGuardSubject)
 }
 
 void JanusGuardSubject::SharedCtor() {
+  onlydir_ = false;
 }
 
 JanusGuardSubject::~JanusGuardSubject() {
@@ -907,6 +911,7 @@ void JanusGuardSubject::Clear() {
   deny_.Clear();
   event_.Clear();
   tags_.Clear();
+  onlydir_ = false;
   _internal_metadata_.Clear();
 }
 
@@ -971,10 +976,24 @@ bool JanusGuardSubject::MergePartialFromCodedStream(
         break;
       }
 
-      // map<string, string> tags = 4;
+      // bool onlyDir = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &onlydir_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // map<string, string> tags = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
           JanusGuardSubject_TagsEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
               JanusGuardSubject_TagsEntry_DoNotUse,
               ::std::string, ::std::string,
@@ -1054,7 +1073,12 @@ void JanusGuardSubject::SerializeWithCachedSizes(
       3, this->event(i), output);
   }
 
-  // map<string, string> tags = 4;
+  // bool onlyDir = 4;
+  if (this->onlydir() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->onlydir(), output);
+  }
+
+  // map<string, string> tags = 5;
   if (!this->tags().empty()) {
     typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
         ConstPtr;
@@ -1090,7 +1114,7 @@ void JanusGuardSubject::SerializeWithCachedSizes(
         entry.reset(tags_.NewEntryWrapper(
             items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            4, *entry, output);
+            5, *entry, output);
         Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
       }
     } else {
@@ -1101,7 +1125,7 @@ void JanusGuardSubject::SerializeWithCachedSizes(
         entry.reset(tags_.NewEntryWrapper(
             it->first, it->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            4, *entry, output);
+            5, *entry, output);
         Utf8Check::Check(&*it);
       }
     }
@@ -1151,7 +1175,12 @@ void JanusGuardSubject::SerializeWithCachedSizes(
       WriteStringToArray(3, this->event(i), target);
   }
 
-  // map<string, string> tags = 4;
+  // bool onlyDir = 4;
+  if (this->onlydir() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->onlydir(), target);
+  }
+
+  // map<string, string> tags = 5;
   if (!this->tags().empty()) {
     typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
         ConstPtr;
@@ -1188,7 +1217,7 @@ void JanusGuardSubject::SerializeWithCachedSizes(
             items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
-                       4, *entry, deterministic, target);
+                       5, *entry, deterministic, target);
 ;
         Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
       }
@@ -1201,7 +1230,7 @@ void JanusGuardSubject::SerializeWithCachedSizes(
             it->first, it->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
-                       4, *entry, deterministic, target);
+                       5, *entry, deterministic, target);
 ;
         Utf8Check::Check(&*it);
       }
@@ -1249,7 +1278,7 @@ size_t JanusGuardSubject::ByteSizeLong() const {
       this->event(i));
   }
 
-  // map<string, string> tags = 4;
+  // map<string, string> tags = 5;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->tags_size());
   {
@@ -1261,6 +1290,11 @@ size_t JanusGuardSubject::ByteSizeLong() const {
       total_size += ::google::protobuf::internal::WireFormatLite::
           MessageSizeNoVirtual(*entry);
     }
+  }
+
+  // bool onlyDir = 4;
+  if (this->onlydir() != 0) {
+    total_size += 1 + 1;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1294,6 +1328,9 @@ void JanusGuardSubject::MergeFrom(const JanusGuardSubject& from) {
   deny_.MergeFrom(from.deny_);
   event_.MergeFrom(from.event_);
   tags_.MergeFrom(from.tags_);
+  if (from.onlydir() != 0) {
+    set_onlydir(from.onlydir());
+  }
 }
 
 void JanusGuardSubject::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1324,6 +1361,7 @@ void JanusGuardSubject::InternalSwap(JanusGuardSubject* other) {
   deny_.InternalSwap(CastToBase(&other->deny_));
   event_.InternalSwap(CastToBase(&other->event_));
   tags_.Swap(&other->tags_);
+  swap(onlydir_, other->onlydir_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

@@ -22,7 +22,8 @@ message JanusGuardSubject {
   repeated string allow = 1;
   repeated string deny = 2;
   repeated string event = 3;
-  map<string, string> tags = 4;
+  bool onlyDir = 4;
+  map<string, string> tags = 5;
 }
 
 message JanusdHandle {
