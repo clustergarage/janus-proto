@@ -459,10 +459,10 @@ class JanusGuardSubject : public ::google::protobuf::Message /* @@protoc_inserti
   const ::google::protobuf::RepeatedPtrField< ::std::string>& event() const;
   ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_event();
 
-  // map<string, string> tags = 5;
+  // map<string, string> tags = 7;
   int tags_size() const;
   void clear_tags();
-  static const int kTagsFieldNumber = 5;
+  static const int kTagsFieldNumber = 7;
   const ::google::protobuf::Map< ::std::string, ::std::string >&
       tags() const;
   ::google::protobuf::Map< ::std::string, ::std::string >*
@@ -473,6 +473,18 @@ class JanusGuardSubject : public ::google::protobuf::Message /* @@protoc_inserti
   static const int kOnlyDirFieldNumber = 4;
   bool onlydir() const;
   void set_onlydir(bool value);
+
+  // bool autoAllowOwner = 5;
+  void clear_autoallowowner();
+  static const int kAutoAllowOwnerFieldNumber = 5;
+  bool autoallowowner() const;
+  void set_autoallowowner(bool value);
+
+  // bool audit = 6;
+  void clear_audit();
+  static const int kAuditFieldNumber = 6;
+  bool audit() const;
+  void set_audit(bool value);
 
   // @@protoc_insertion_point(class_scope:janus.JanusGuardSubject)
  private:
@@ -488,6 +500,8 @@ class JanusGuardSubject : public ::google::protobuf::Message /* @@protoc_inserti
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > tags_;
   bool onlydir_;
+  bool autoallowowner_;
+  bool audit_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_janus_2eproto::TableStruct;
 };
@@ -1320,7 +1334,35 @@ inline void JanusGuardSubject::set_onlydir(bool value) {
   // @@protoc_insertion_point(field_set:janus.JanusGuardSubject.onlyDir)
 }
 
-// map<string, string> tags = 5;
+// bool autoAllowOwner = 5;
+inline void JanusGuardSubject::clear_autoallowowner() {
+  autoallowowner_ = false;
+}
+inline bool JanusGuardSubject::autoallowowner() const {
+  // @@protoc_insertion_point(field_get:janus.JanusGuardSubject.autoAllowOwner)
+  return autoallowowner_;
+}
+inline void JanusGuardSubject::set_autoallowowner(bool value) {
+  
+  autoallowowner_ = value;
+  // @@protoc_insertion_point(field_set:janus.JanusGuardSubject.autoAllowOwner)
+}
+
+// bool audit = 6;
+inline void JanusGuardSubject::clear_audit() {
+  audit_ = false;
+}
+inline bool JanusGuardSubject::audit() const {
+  // @@protoc_insertion_point(field_get:janus.JanusGuardSubject.audit)
+  return audit_;
+}
+inline void JanusGuardSubject::set_audit(bool value) {
+  
+  audit_ = value;
+  // @@protoc_insertion_point(field_set:janus.JanusGuardSubject.audit)
+}
+
+// map<string, string> tags = 7;
 inline int JanusGuardSubject::tags_size() const {
   return tags_.size();
 }
